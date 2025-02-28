@@ -2117,7 +2117,6 @@ static void writeDIGenericSubrange(raw_ostream &Out, const DIGenericSubrange *N,
   };
 
   auto GetConstant = [&](Metadata *Bound) -> int64_t {
-    assert(IsConstant(Bound) && "Expected constant");
     auto *BE = dyn_cast_or_null<DIExpression>(Bound);
     return static_cast<int64_t>(BE->getElement(1));
   };
